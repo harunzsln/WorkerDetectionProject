@@ -17,7 +17,7 @@ This project is an **Artificial Intelligence (Computer Vision)** based worker mo
 * **OpenCV (`cv2`)** (For video processing and visualization)
 * **NumPy** (For vector mathematics and distance calculations)
 
-## 📦 Installation
+## Installation
 
 Follow these steps to run the project on your local machine:
 
@@ -32,7 +32,7 @@ Follow these steps to run the project on your local machine:
     pip install ultralytics opencv-python numpy
     ```
 
-## 🚀 Usage
+## Usage
 
 1.  Place the video you want to analyze in the project root directory and rename it to `worker_test_video.mp4` (or update the `cv2.VideoCapture("...")` path in the code).
 2.  Run the main Python script:
@@ -41,7 +41,7 @@ Follow these steps to run the project on your local machine:
     ```
 3.  Once the process is complete, the analysis results will be saved in the same directory as `analysed_video.mp4`.
 
-## ⚙️ Configuration Settings
+## Configuration Settings
 
 You can optimize the variables at the beginning of the code according to your environment:
 
@@ -52,7 +52,7 @@ You can optimize the variables at the beginning of the code according to your en
 | `MIN_CONFIDENCE` | Minimum confidence score required for the model to accept an object as human (kept high to filter out chairs). | `0.55` |
 | `maxlen=25` | Memory buffer size for temporal filtering. Corresponds to approximately 1 second of video feed. | `25` |
 
-## 🧠 Algorithm Logic (How It Works)
+## Algorithm Logic (How It Works)
 
 The system utilizes core keypoints obtained from the YOLOv8 Pose model: Nose (`0`), Left Shoulder (`5`), Right Shoulder (`6`).
 
@@ -61,6 +61,6 @@ The system utilizes core keypoints obtained from the YOLOv8 Pose model: Nose (`0
 3.  If the nose approaches the shoulder line closer than 15% of the shoulder width (`head_dist_ratio < 0.15`), it is interpreted as the person leaning forward/backward or collapsing onto the desk.
 4.  This state is recorded in a buffer, and if it exceeds a specified duration (`SLEEP_LIMIT`), it is displayed on the interface as a red alert.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
