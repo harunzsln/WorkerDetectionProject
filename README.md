@@ -23,7 +23,7 @@ Follow these steps to run the project on your local machine:
 
 1.  Clone the repository:
     ```bash
-    git clone [https://github.com/harunzsln/WorkerDetectionProject.git](https://github.com/harunzsln/WorkerDetectionProject.git)
+    git clone https://github.com/harunzsln/WorkerDetectionProject.git
     cd worker-monitoring-system
     ```
 
